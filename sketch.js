@@ -1,9 +1,17 @@
+let cnv;
+
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	cnv = createCanvas(innerWidth, innerHeight);
+	cnv.parent("p5Sketch");
 }
 
 function draw() {
-	background(0);
-
+	background(51);
 	
+
+}
+
+
+function windowResized() {
+	resizeCanvas(innerWidth, innerHeight);
 }
