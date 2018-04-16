@@ -1,8 +1,34 @@
+* {
+  /* border: 1px solid red; */
+}
+
+input {
+  margin-top: 10px;
+}
+
+body {
+  font-size: 10px;
+  color: white;
+  font-family: "Courier";
+  line-height: 2;
+}
+
 #p5Sketch {
   position: fixed;
+  top: 0px;
+  z-index: -10;
 }
 
 #sliderBg {
   width: 100%;
-  background-color: pink;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  padding-left: 20px;
 }
