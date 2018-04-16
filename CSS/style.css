@@ -1,3 +1,8 @@
 #p5Sketch {
   position: fixed;
 }
+
+#sliderBg {
+  width: 100%;
+  background-color: pink;
+}
