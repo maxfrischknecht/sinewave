@@ -29,23 +29,23 @@ function draw() {
 	period = document.getElementById("slider5").value;
 	let offset = document.getElementById("slider6").value;
 
-	for(let i = 0; i < polygonAmount; i++){
-		// the period changes the amount of waves
-		waveFreq = map(i, 0, polygonAmount, 0, TWO_PI * period);
-		// sin always between 0, 1, add height/2 to place it in the middle
-		// multiply it with the height you like the wave to be
-		// change the y position constantly
-		// add waveFreq to make each one different
-		let y = (height/2) + sin(wave + waveFreq) * waveHeight;
-		polygon(vertises, radius * i, width/2, y);
-	}
-
-
 	// for(let i = 0; i < polygonAmount; i++){
+	// 	// the period changes the amount of waves
 	// 	waveFreq = map(i, 0, polygonAmount, 0, TWO_PI * period);
+	// 	// sin always between 0, 1, add height/2 to place it in the middle
+	// 	// multiply it with the height you like the wave to be
+	// 	// change the y position constantly
+	// 	// add waveFreq to make each one different
 	// 	let y = (height/2) + sin(wave + waveFreq) * waveHeight;
-	// 	pointIgon(vertises, radius * i, offset * i, width/2, y);
+	// 	polygon(vertises, radius * i, width/2, y);
 	// }
+
+	// additional function for points
+	for(let i = 0; i < polygonAmount; i++){
+		waveFreq = map(i, 0, polygonAmount, 0, TWO_PI * period);
+		let y = (height/2) + sin(wave + waveFreq) * waveHeight;
+		pointIgon(vertises, radius * i, offset * i, width/2, y);
+	}
 
 	// always add a 0.14... to it
 	wave += inc;
@@ -61,6 +61,7 @@ function polygon(vert, r, posX, posY) {
 		vertex(x, y);
 	}
 	endShape(CLOSE);
+	
 }
 
 function pointIgon(vert, r, offset, posX, posY) {
@@ -73,6 +74,7 @@ function pointIgon(vert, r, offset, posX, posY) {
 		vertex(x, y);
 	}
 	endShape(CLOSE);
+
 }
 
 function windowResized() {
